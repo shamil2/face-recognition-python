@@ -28,8 +28,8 @@ known_face_names = [
 ]
 for f in os.listdir('images'):
     file_name, file_ext = os.path.splitext(f)
-    print('Loading faces of ' +file_name)
-    image = face_recognition.load_image_file(f)
+    print('Loading faces of ' + f)
+    image = face_recognition.load_image_file('images/'+f)
     face_encoding = face_recognition.face_encodings(image)[0]
     known_face_encodings.append(face_encoding)
     known_face_names.append(file_name)
